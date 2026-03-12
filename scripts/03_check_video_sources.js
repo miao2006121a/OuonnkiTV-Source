@@ -88,6 +88,7 @@ async function runWithLimit(tasks, limit, onComplete) {
 
   const config = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf-8"));
   const sources = Object.values(config.api_site || {}).map((s) => ({
+    id: s.id,
     name: s.name,
     api: s.api,
     isAdult: s.isAdult || false,
@@ -102,6 +103,7 @@ async function runWithLimit(tasks, limit, onComplete) {
     const keyword = s.isAdult ? CONFIG.adultKeyword || CONFIG.keyword : CONFIG.keyword;
     const result = await checkSource(proxiedApi, keyword);
     return {
+      id: s.id,
       name: s.name,
       api: s.api,
       isAdult: s.isAdult,

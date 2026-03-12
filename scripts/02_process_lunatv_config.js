@@ -36,9 +36,11 @@ function processConfig(config) {
     const isAdult = isAdultContent(originalName);
     const cleanedName = cleanName(originalName);
     const cleanedApi = cleanApiUrl(value.api);
+    const domainId = key.replace(/\./g, "-");
 
     result.api_site[key] = {
       ...value,
+      id: domainId,
       name: cleanedName,
       api: cleanedApi,
       isAdult: isAdult,

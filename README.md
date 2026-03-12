@@ -49,7 +49,7 @@ module.exports = {
     maxRetry: 2,          // 失败重试次数
     retryDelay: 1000,     // 重试间隔（毫秒）
     keyword: "斗罗大陆",   // 检测用的搜索关键词（正常视频源）
-    adultKeyword: "三上悠", // 检测用的搜索关键词（成人视频源）
+    adultKeyword: "三上悠", // 检测用的搜索关键词（成人视频源），留空则使用 keyword
     headers: { ... },     // HTTP 请求头
   },
 };
